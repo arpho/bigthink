@@ -7,9 +7,6 @@
     città<input type='text' ng-model="citta" name="citta" required/>
     mail<input type='mail' ng-model='mail' name="mail" required/>
     password<input type='password' ng-model="password" name="password" required />
-    <input type="submit" ng-disabled="addUser.name.$invalid ||
-                                     addUser.surname.$invalid ||
-                                     addUser.dob.$invalid||
-                                     addUser.citta.$invalid ||
-                                     addUser.password.$invalid"/>
+    ripeti password <input type="password" ng-model='passwordMatch' name="passwordMatch" required password-match="password" />
+    <input type="submit" ng-disabled="!addUser.$valid"/>
 </form>
