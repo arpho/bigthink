@@ -74,4 +74,6 @@ angular.module('bigthinkApp')
             });
         }
     };
-}]);
+}]).controller('StaticCtrl',function($scope) {
+ $scope.static = 'stupid page';   
+});

@@ -18,6 +18,9 @@ angular.module('bigthinkApp', [
     }).when('/riservato', {
         templateUrl: 'views/riservato.html',
         controller: 'ReservedCtrl'
+    }).when('/static', {
+        templateUrl:'views/static.html',
+        controller:'StaticCtrl'
     })
       .otherwise({
         redirectTo: '/'
