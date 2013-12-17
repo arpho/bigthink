@@ -43,7 +43,8 @@ app.configure('production', function(){
 
 // Routes
 app.get('/api/awesomeThings', api.awesomeThings);
-app.post('/api/registerUser',api.registerUser)
+app.post('/api/registerUser',api.registerUser);
+app.post('/api/login',api.checkUser);
 // Start server
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
