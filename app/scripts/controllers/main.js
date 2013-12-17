@@ -19,7 +19,9 @@ angular.module('bigthinkApp')
           $http.post('/api/login',user2check).success(function(user) {
               debug('login done');
               debug(user);
+              user.logged = true;
               $scope.esitoLogin = "benvenuto "+user.name;
+              $rootScope.user = user;
           }).error(function(data, status, headers, config) {
               debug('login failure');
               $scope.esitoLogin ='Login fallito';
@@ -40,5 +42,10 @@ angular.module('bigthinkApp')
         user.password = md5.createHash($scope.password);
         debug(user);
         $http.post('/api/registerUser',user);
+    }
+}).controller('ReservedCtrl', function($scope) {
+    if ($scope.user) {
+        $scope.logged = true;
+        
     }
 });

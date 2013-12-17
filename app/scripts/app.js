@@ -15,6 +15,9 @@ angular.module('bigthinkApp', [
       }).when('/registrazione', {
         templateUrl: 'views/register.html',
         controller:'RegCtrl'
+    }).when('/riservato', {
+        templateUrl: 'views/riservato.html',
+        controller: 'ReservedCtrl'
     })
       .otherwise({
         redirectTo: '/'
