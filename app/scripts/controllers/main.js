@@ -41,7 +41,10 @@ angular.module('bigthinkApp')
         user.city = $scope.city;
         user.password = md5.createHash($scope.password);
         debug(user);
-        $http.post('/api/registerUser',user);
+        $http.post('/api/registerUser',user).success(function() {
+            
+            $scope.result = 'utente '+user.name +' registrato';
+        });
     }
 }).controller('ReservedCtrl', function($scope) {
     if ($scope.user) {
