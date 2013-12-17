@@ -22,7 +22,13 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-
+/* form validation*/
+input.ng-invalid {
+  border: 1px solid red;
+}
+input.ng-valid {
+  border: 1px solid green;
+}
 /* Custom page header */
 .header {
     border-bottom: 1px solid #e5e5e5;
