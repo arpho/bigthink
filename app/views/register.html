@@ -1,13 +1,26 @@
 <form name="addUser" novalidate ng-submit="submitUser();">
     name <input type="text" name='name' ng-model="name"
-    ng-model="item" required/><br>
+    ng-model="item" required/><span ng-show="addUser.name.$error.required">required</span><br>
     surname<input type="text" name = 'surname' ng-model="surname"
-    ng-model="price" required/><br>
-    dob<input type="date" ng-model="dob" name="dob" required/><br>
+    ng-model="price" required/>
+    <span ng-show="addUser.surname.$error.required">required</span>
+    <br>
+    dob<input type="date" ng-model="dob" name="dob" required/>
+    <span ng-show="addUser.dob.$error.required">required</span>
+    <br>
     città<input type='text' ng-model="citta" name="citta" required/>
-    mail<input type='mail' ng-model='mail' name="mail" required/>
+    <span ng-show="addUser.citta.$error.required">required</span>
+    <br>
+    email<input type='email' ng-model='mail' name="mail" required/>
+    <span ng-show="addUser.mail.$error.required">required</span>
+    <span ng-show="addUser.mail.$error.email "> not valid email </span>
+    <br>
     password<input type='password' ng-model="password" name="password" required />
-    ripeti password <input type="password" ng-model='passwordMatch' name="passwordMatch" required password-match="password" />
+    <span ng-show="addUser.password.$error.required">required</span>
+    <br>
+    ripeti password <input type="password" ng-model='passwordMatch' name="passwordMatch" placeholder="repeat password" ng-model="user.repeatPassword" ng-change="checkPassword()" required  />
+    <span ng-show="nomatch">Passwords do not match.</span>
+    <br>
     <input type="submit" ng-disabled="!addUser.$valid"/>
 </form>
 {{result}}
